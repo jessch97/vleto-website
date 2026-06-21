@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vleto — Log elk concert. Deel elke ervaring.</title>
+  <meta name="description" content="Vleto is de app om je concert- en festivalbezoek bij te houden en te delen met vrienden. Binnenkort in de Play Store." />
+  <meta property="og:title" content="Vleto" />
+  <meta property="og:description" content="Log elk concert. Deel elke ervaring." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vleto.app" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #121212;
+      --card:    #1E1E1E;
+      --accent:  #39FF14;
+      --text:    #FFFFFF;
+      --muted:   #9CA3AF;
+      --border:  #2A2A2A;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 64px 24px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      width: 220px;
+      margin-bottom: 40px;
+    }
+
+    /* Hero */
+    .tagline {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .tagline span { color: var(--accent); }
+
+    .sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 400px;
+      margin-bottom: 48px;
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      margin-bottom: 48px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .feature-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .feature-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .feature-text strong {
+      color: var(--text);
+      display: block;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    /* Signup */
+    .signup-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .signup-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .signup-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* Tally embed */
+    .tally-wrap {
+      width: 100%;
+      min-height: 120px;
+    }
+
+    /* Store badge */
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+      text-decoration: none;
+    }
+
+    .store-badge svg { flex-shrink: 0; }
+
+    /* Footer */
+    footer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .tagline { font-size: 1.6rem; }
+      .page { padding: 48px 20px 40px; }
+      .signup-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <!-- Logo -->
+    <svg class="logo" viewBox="300 95 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vleto">
+      <line x1="320" y1="140" x2="680" y2="140" stroke="#9CA3AF" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="362" cy="140" r="22" fill="#39FF14" opacity="0.08"/>
+      <circle cx="362" cy="140" r="14" fill="#39FF14" opacity="0.16"/>
+      <circle cx="362" cy="140" r="6"  fill="#39FF14"/>
+      <circle cx="432" cy="140" r="24" fill="#39FF14" opacity="0.09"/>
+      <circle cx="432" cy="140" r="16" fill="#39FF14" opacity="0.18"/>
+      <circle cx="432" cy="140" r="7"  fill="#39FF14"/>
+      <circle cx="545" cy="140" r="38" fill="#39FF14" opacity="0.10"/>
+      <circle cx="545" cy="140" r="26" fill="#39FF14" opacity="0.20"/>
+      <circle cx="545" cy="140" r="13" fill="#39FF14"/>
+      <circle cx="638" cy="140" r="22" fill="#39FF14" opacity="0.08"/>
+      <circle cx="638" cy="140" r="14" fill="#39FF14" opacity="0.16"/>
+      <circle cx="638" cy="140" r="6"  fill="#39FF14"/>
+      <text x="500" y="270" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="64" font-weight="500" fill="#ffffff" letter-spacing="-2.5">vleto</text>
+    </svg>
+
+    <!-- Hero -->
+    <h1 class="tagline">Log elk concert.<br/><span>Deel elke ervaring.</span></h1>
+    <p class="sub">
+      Vleto is de app om je concert- en festivalbezoek bij te houden,
+      te beoordelen en te delen met vrienden. Binnenkort beschikbaar voor Android.
+    </p>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">🎤</span>
+        <div class="feature-text">
+          <strong>Logboek voor muziekfans</strong>
+          Houd bij welke artiesten je hebt gezien, wanneer en hoe goed het was.
+        </div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">⭐</span>
+        <div class="feature-text">
+          <strong>Ratings & herinneringen</strong>
+          Geef een beoordeling, voeg foto's toe en schrijf aantekeningen per show.
+        </div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">👥</span>
+        <div class="feature-text">
+          <strong>Sociaal platform</strong>
+          Volg vrienden, ontdek welke concerten zij bezochten en deel jouw favorieten.
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup -->
+    <div class="signup-card">
+      <p class="signup-label">Schrijf je in voor de alfatest</p>
+      <p class="signup-sub">Wees er als eerste bij en help de app beter te maken.</p>
+      <div class="tally-wrap">
+        <!--
+          INSTRUCTIE: vervang JOUW_FORM_ID door het ID van jouw Tally-formulier.
+          Stap 1: ga naar tally.so → New form → stel in (naam + e-mail velden)
+          Stap 2: Share → Embed → kopieer het form-ID uit de embed-URL
+          Stap 3: vervang JOUW_FORM_ID hieronder door dat ID
+
+          Voorbeeld embed-URL: https://tally.so/embed/wgz2Qx → ID = wgz2Qx
+        -->
+        <div data-tally-src="https://tally.so/embed/RG2ZPP?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+             data-tally-layout="inline"
+             data-tally-width="100%"
+             data-tally-hide-title="1"
+             data-tally-overlay="0"
+             style="width:100%; min-height:120px; border:none;">
+        </div>
+        <script>
+          var d = document,
+              w = "https://tally.so/widgets/embed.js",
+              v = function () {
+                if (typeof Tally !== "undefined") {
+                  Tally.loadEmbeds();
+                } else {
+                  d.querySelectorAll("[data-tally-src]:not([src])").forEach(function (e) {
+                    e.src = e.dataset.tallySrc;
+                  });
+                }
+              };
+          if (typeof Tally !== "undefined") {
+            v();
+          } else if (d.querySelector('script[src="' + w + '"]') == null) {
+            var s = d.createElement("script");
+            s.src = w;
+            s.onload = v;
+            s.onerror = v;
+            d.body.appendChild(s);
+          }
+        </script>
+      </div>
+    </div>
+
+    <!-- Store badge -->
+    <div class="store-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+        <path d="M8 12l2 2 4-4"/>
+      </svg>
+      Binnenkort in de Google Play Store
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      © 2026 Vleto &nbsp;·&nbsp;
+      <a href="mailto:contact@vleto.app">contact@vleto.app</a>
+    </footer>
+
+  </main>
+</body>
+</html>
